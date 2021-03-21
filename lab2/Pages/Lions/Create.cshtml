@@ -1,0 +1,57 @@
+﻿@page
+@model lab2.Pages.Lions.CreateModel
+
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<Program> Localizer
+
+@{
+    ViewData["Title"] = Localizer["Create"];
+}
+
+<h1>@Localizer["Create"]</h1>
+
+<h4>@Localizer["Lions"]</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Lion.Name" class="control-label"></label>
+                <input asp-for="Lion.Name" class="form-control" />
+                <span asp-validation-for="Lion.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lion.Weight" class="control-label"></label>
+                <input asp-for="Lion.Weight" class="form-control" />
+                <span asp-validation-for="Lion.Weight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lion.Age" class="control-label"></label>
+                <input asp-for="Lion.Age" class="form-control" />
+                <span asp-validation-for="Lion.Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lion.Coloration" class="control-label"></label>
+                <select asp-for="Lion.Coloration" class="form-control"></select>
+                <span asp-validation-for="Lion.Coloration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lion.TailLength" class="control-label"></label>
+                <input asp-for="Lion.TailLength" class="form-control" />
+                <span asp-validation-for="Lion.TailLength" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="@Localizer["Create"]" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">@Localizer["Back"]</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,55 @@
+﻿@page
+@model lab2.Pages.Lions.DeleteModel
+
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<Program> Localizer
+
+@{
+    ViewData["Title"] = Localizer["Delete"];
+}
+
+<h1>@Localizer["Delete"]</h1>
+
+<h3>@Localizer["DeleteConfirmation"]</h3>
+<div>
+    <h4>Lion</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lion.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Lion.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lion.Weight)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Lion.Weight)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lion.Age)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Lion.Age)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lion.Coloration)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Lion.Coloration)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lion.TailLength)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Lion.TailLength)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Lion.Id" />
+        <input type="submit" value="@Localizer["Delete"]" class="btn btn-danger" /> |
+        <a asp-page="./Index">@Localizer["Back"]</a>
+    </form>
+</div>

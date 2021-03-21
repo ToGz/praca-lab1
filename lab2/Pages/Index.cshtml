@@ -1,0 +1,20 @@
+﻿@page
+@model IndexModel
+
+@using Microsoft.Extensions.Localization
+
+@inject IStringLocalizer<IndexModel> Localizer
+@inject IStringLocalizer<Program> CommonLocalizer
+
+@{
+    ViewData["Title"] = CommonLocalizer["Home"];
+}
+
+<div class="text-center">
+    <h1 class="display-4">@Localizer["Welcome"]</h1>
+    <br />
+    <p>@Localizer["PageContent"]</p>
+    <br />
+    <p><a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/localization?view=aspnetcore-5.0"> @Localizer["Localization"]</a>.</p>
+    <p><a href="https://docs.microsoft.com/en-us/aspnet/core/data/ef-rp/intro?view=aspnetcore-5.0&tabs=visual-studio">@Localizer["Initialization"]</a>.</p>
+</div>

@@ -1,0 +1,67 @@
+﻿@page
+@model BooksModel
+
+@{
+    ViewData["Title"] = "Książki";
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <h1>@ViewData["Title"]</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Books[0].Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Books[0].ReleaseDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Books[0].PublishingHouse)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Books[0].PageCount)
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model?.Books) 
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReleaseDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PublishingHouse)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PageCount)
+                    </td>
+                    <td>
+                        <div class="input-group">
+                            <a style="margin-right: 5px" asp-page="EditBook" asp-route-id="@item.Id" class="btn btn-outline-info">Edytuj</a>
+                            <form asp-page-handler="delete" asp-route-id="@item.Id" method="post">
+                                <button class="btn btn-outline-danger">Usuń</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+        <p>
+            <a asp-page="CreateBook" class="btn btn-primary">Dodaj</a>
+        </p>
+    </body>
+</html>

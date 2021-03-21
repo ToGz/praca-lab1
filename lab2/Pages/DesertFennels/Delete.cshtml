@@ -1,0 +1,61 @@
+﻿@page
+@model lab2.Pages.DesertFennels.DeleteModel
+
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<Program> Localizer
+
+@{
+    ViewData["Title"] = Localizer["Delete"];
+}
+
+<h1>@Localizer["Delete"]</h1>
+
+<h3>@Localizer["DeleteConfirmation"]</h3>
+<div>
+    <h4>DesertFennel</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DesertFennel.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DesertFennel.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DesertFennel.Weight)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DesertFennel.Weight)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DesertFennel.Age)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DesertFennel.Age)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DesertFennel.EarLength)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DesertFennel.EarLength)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DesertFennel.MaxSpeed)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DesertFennel.MaxSpeed)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DesertFennel.FavouriteWord)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DesertFennel.FavouriteWord)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="DesertFennel.Id" />
+        <input type="submit" value="@Localizer["Delete"]" class="btn btn-danger" /> |
+        <a asp-page="./Index">@Localizer["Back"]</a>
+    </form>
+</div>

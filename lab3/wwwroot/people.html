@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Osoba</title>
+    <link rel="stylesheet" href="css/people.css">
+</head>
+<body>
+    <div id="top-bar">
+        <div class="bar-item"><a href="index.html" class="bar-link">People CRUD</a></div>
+        <div class="bar-item"><a href="people.html" class="bar-link" id="selected-site">Ludzie</a></div>
+        <div class="bar-item"><a href="books.html" class="bar-link">Książki</a></div>
+    </div>
+
+    <div id="table-container">
+        <div id="form-add">
+            <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+                <p>
+                    <div class="form-text">Podaj imię:</div> 
+                    <div class="form-field-name">
+                        <input class="form-field-name-input" type="text" id="add-name">
+                    </div>
+                    <div class="form-field-finsh"></div>
+                    <div style="clear: both;"></div>
+                </p>
+                <p style="margin-top: 10px;">
+                    <div class="form-text">Podaj nazwisko:</div>
+                    <div class="form-field-name">
+                        <input class="form-field-name-input" type="text" id="add-surname">
+                    </div>
+                    <div class="form-field-finsh"><input class="form-field-finsh-button" type="submit" value="Wyślij"></div>
+                    <div style="clear: both;"></div>
+                </p>
+            </form>
+        </div>
+        <div id="form-edit">
+            <form action="javascript:void(0);" method="POST" onsubmit="updateItem()">
+                <input type="hidden" id="edit-id">
+                <p>
+                    <div class="form-text">Zmień imię:</div>
+                    <div class="form-field-name">
+                        <input class="form-field-name-input" type="text" id="edit-name">
+                    </div>       
+                    <div class="form-field-finsh"></div>         
+                    <div style="clear: both;"></div>
+                </p>
+                <p style="margin-top: 10px;">
+                    <div class="form-text">Zmień nazwisko:</div> 
+                    <div class="form-field-name">
+                        <input class="form-field-name-input" type="text" id="edit-surname">
+                    </div>
+                    <div class="form-field-finsh"><input class="form-field-finsh-button" type="submit" value="Wyślij"></div>
+                    <div style="clear: both;"></div>
+                </p>
+            </form>
+        </div>
+        <p></p>
+        <p id="counter"></p>
+        <p></p>
+        <table>
+            <tbody id="persons"></tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="js/people.js"></script>
+</body>
+</html>

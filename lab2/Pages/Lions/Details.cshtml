@@ -1,0 +1,52 @@
+﻿@page
+@model lab2.Pages.Lions.DetailsModel
+
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<Program> Localizer
+
+@{
+    ViewData["Title"] = Localizer["Details"];
+}
+
+<h1>@Localizer["Details"]</h1>
+
+<div>
+    <h4>@Localizer["Lions"]</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lion.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Lion.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lion.Weight)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Lion.Weight)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lion.Age)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Lion.Age)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lion.Coloration)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Lion.Coloration)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lion.TailLength)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Lion.TailLength)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Lion.Id">Edit</a> |
+    <a asp-page="./Index">@Localizer["Back"]</a>
+</div>

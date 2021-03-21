@@ -1,0 +1,62 @@
+﻿@page
+@model lab2.Pages.DesertFennels.CreateModel
+
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<Program> Localizer
+
+@{
+    ViewData["Title"] = Localizer["Create"];
+}
+
+<h1>@Localizer["Create"]</h1>
+
+<h4>@Localizer["DesertFennels"]</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DesertFennel.Name" class="control-label"></label>
+                <input asp-for="DesertFennel.Name" class="form-control" />
+                <span asp-validation-for="DesertFennel.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DesertFennel.Weight" class="control-label"></label>
+                <input asp-for="DesertFennel.Weight" class="form-control" />
+                <span asp-validation-for="DesertFennel.Weight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DesertFennel.Age" class="control-label"></label>
+                <input asp-for="DesertFennel.Age" class="form-control" />
+                <span asp-validation-for="DesertFennel.Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DesertFennel.EarLength" class="control-label"></label>
+                <input asp-for="DesertFennel.EarLength" class="form-control" />
+                <span asp-validation-for="DesertFennel.EarLength" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DesertFennel.MaxSpeed" class="control-label"></label>
+                <input asp-for="DesertFennel.MaxSpeed" class="form-control" />
+                <span asp-validation-for="DesertFennel.MaxSpeed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DesertFennel.FavouriteWord" class="control-label"></label>
+                <input asp-for="DesertFennel.FavouriteWord" class="form-control" />
+                <span asp-validation-for="DesertFennel.FavouriteWord" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="@Localizer["Create"]" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">@Localizer["Back"]</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

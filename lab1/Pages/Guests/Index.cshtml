@@ -1,0 +1,67 @@
+﻿@page
+@model lab1.Pages.Guests.IndexModel
+
+@{
+    ViewData["Title"] = "Goście";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h1>@ViewData["Title"]</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Guest[0].Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Guest[0].Surname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Guest[0].TimesVisited)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model.Guest)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Surname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TimesVisited)
+                    </td>
+                    <td>
+                        <div class="input-group">
+                            <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-outline-info" style="margin-right: 5px">Edit</a>
+                            <form asp-page-handler="delete" asp-route-id="@item.Id" method="post" style="margin-right: 5px">
+                                <button class="btn btn-outline-danger">Usuń</button>
+                            </form>
+                            <form asp-page-handler="put" asp-route-id="@item.Id" method="post">
+                                <button class="btn btn-outline-success">+</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <p>
+        <a asp-page="Create">Dodaj</a>
+    </p>
+</body>
+</html>

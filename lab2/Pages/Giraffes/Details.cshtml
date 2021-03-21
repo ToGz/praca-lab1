@@ -1,0 +1,53 @@
+﻿@page
+@model lab2.Pages.Giraffes.DetailsModel
+
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<Program> Localizer
+
+
+@{
+    ViewData["Title"] = Localizer["Details"];
+}
+
+<h1>@Localizer["Details"]</h1>
+
+<div>
+    <h4>@Localizer["Giraffes"]</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Giraffe.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Giraffe.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Giraffe.Weight)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Giraffe.Weight)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Giraffe.Age)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Giraffe.Age)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Giraffe.NeckLength)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Giraffe.NeckLength)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Giraffe.NumberOfDots)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Giraffe.NumberOfDots)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Giraffe.Id">@Localizer["Edit"]</a> |
+    <a asp-page="./Index">@Localizer["Back"]</a>
+</div>

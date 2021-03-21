@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>People CRUD</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="top-bar">
+        <div class="bar-item"><a href="index.html" class="bar-link" id="selected-site">People CRUD</a></div>
+        <div class="bar-item"><a href="people.html" class="bar-link">Ludzie</a></div>
+        <div class="bar-item"><a href="books.html" class="bar-link">Książki</a></div>
+    </div>
+    
+    <div id="table-container">
+        <h1>People CRUD</h1>
+        <div id="form-add">
+            <h3>Add</h3>
+            <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+                <input type="text" id="add-name" placeholder="Name">
+                <input type="text" id="add-surname" placeholder="Surname">
+                <input type="submit" value="Add">
+            </form>
+        </div>
+        <div id="form-edit">
+            <h3>Edit</h3>
+            <form action="javascript:void(0);" method="POST" onsubmit="updateItem()">
+                <input type="hidden" id="edit-id">
+                <input type="checkbox" id="edit-isAwesome">
+                <input type="text" id="edit-name">
+                <input type="text" id="edit-surname">
+                <input type="submit" value="Save">
+            </form>
+        </div>
+        <p></p>
+        <p id="counter"></p>
+        <p></p>
+        <table>
+            <tr>
+                <th>Is Awesome</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tbody id="persons"></tbody>
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="js/site.js"></script>
+</body>
+</html>

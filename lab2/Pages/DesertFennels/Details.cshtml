@@ -1,0 +1,58 @@
+﻿@page
+@model lab2.Pages.DesertFennels.DetailsModel
+
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<Program> Localizer
+
+@{
+    ViewData["Title"] = Localizer["Details"];
+}
+
+<h1>@Localizer["Details"]</h1>
+
+<div>
+    <h4>@Localizer["DesertFennel"]</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DesertFennel.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DesertFennel.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DesertFennel.Weight)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DesertFennel.Weight)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DesertFennel.Age)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DesertFennel.Age)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DesertFennel.EarLength)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DesertFennel.EarLength)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DesertFennel.MaxSpeed)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DesertFennel.MaxSpeed)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DesertFennel.FavouriteWord)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DesertFennel.FavouriteWord)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.DesertFennel.Id">@Localizer["Edit"]</a> |
+    <a asp-page="./Index">@Localizer["Back"]</a>
+</div>

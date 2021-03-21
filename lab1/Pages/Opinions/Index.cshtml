@@ -1,0 +1,55 @@
+﻿@page
+@model lab1.Pages.Opinions.IndexModel
+
+@{
+    ViewData["Title"] = "Komentarze";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h1>@ViewData["Title"]</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Opinion[0].Comment)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Opinion[0].Rating)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Opinion)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Comment)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rating)
+                    </td>
+                    <td>
+                        <div class="input-group">
+                            <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-outline-info" style="margin-right: 5px">Edit</a>
+                            <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-outline-danger">Delete</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <p>
+        <a asp-page="Create">Dodaj</a>
+    </p>
+</body>
+</html>
